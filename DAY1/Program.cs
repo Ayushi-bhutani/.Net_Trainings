@@ -2,12 +2,13 @@
 using System;
 public class Program
 {
-    public static void Main2()
+    public static void Main()
     {
        
         int count=0;
         Console.WriteLine("Enter a number:");
-        int n = int.Parse(Console.ReadLine());
+        string? input = Console.ReadLine();
+        int n = int.Parse(input);
         for(int i=3; i<n; i=i+2)
         {
 
