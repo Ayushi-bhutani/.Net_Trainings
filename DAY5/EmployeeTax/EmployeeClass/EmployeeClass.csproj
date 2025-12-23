@@ -1,11 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\IndEmployee\IndEmployee.csproj" />
+    <ProjectReference Include="..\USEmployee\USEmployee.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <!-- <OutputType>Exe</OutputType> -->
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartUpObject>OopsSessions.Program2</StartUpObject>
   </PropertyGroup>
 
 </Project>

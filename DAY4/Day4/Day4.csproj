@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartUpObject>OopsSessions.Program2</StartUpObject>
+    <Startupobject>family.Program</Startupobject>
   </PropertyGroup>
 
 </Project>
