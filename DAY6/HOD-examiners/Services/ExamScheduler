@@ -1,0 +1,35 @@
+using System.Collections.Generic;
+
+namespace Management;
+
+public class ExamScheduler
+{
+    private readonly List<Exam> _exams = new();
+
+    public void ScheduleExam(SubjectExam subject, Examiner examiner, DateTime date)
+    {
+        // rule: avoid duplicate date+subject
+        bool exists = _exams.Any(e =>
+            e.Subject.SubjectName == subject.SubjectName &&
+            e.ExamDate.Date == date.Date);
+
+        if (exists)
+        {
+            Console.WriteLine($"⚠ Exam already scheduled for {subject.SubjectName} on {date:d}");
+            return;
+        }
+
+        _exams.Add(new Exam(subject, examiner, date));
+        Console.WriteLine($"✔ Scheduled: {subject.SubjectName} on {date:d}");
+    }
+
+    public void ShowSchedule()
+    {
+        Console.WriteLine("\n=== EXAM SCHEDULE ===");
+
+        foreach (var exam in _exams)
+        {
+            Console.WriteLine(exam);
+        }
+    }
+}
