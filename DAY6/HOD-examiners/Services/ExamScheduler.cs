@@ -8,6 +8,8 @@ public class ExamScheduler
 
     public void ScheduleExam(SubjectExam subject, Examiner examiner, DateTime date)
     {
+
+        List<Student> students = DataBank.GetStudents();
         // rule: avoid duplicate date+subject
         bool exists = _exams.Any(e =>
             e.Subject.SubjectName == subject.SubjectName &&

@@ -1,4 +1,5 @@
-namespace Management;
+namespace Management
+{
 
 public class HOD
 {
@@ -7,9 +8,10 @@ public class HOD
     public string HodId { get; set; }
 
     public HOD(string name, string dept, string hodId)
-    {
+    {   
         Name = name;
         Dept = dept;
         HodId = hodId;
     }
+}
 }
