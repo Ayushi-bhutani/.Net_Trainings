@@ -7,10 +7,16 @@ namespace movies {
         public int? Ratings;
 
         public void AddMovie(string MovieDetails){
-            Movie obj = new Movie();
-            obj = Console.ReadLine();
+            string[] parts = MovieDetails.Split(',');
 
-            MovieList.Add(obj);
+            Movie x = new Movie();
+            x.Title = parts[0];
+            x.Artist = parts[1];
+            x.Genre = parts[2];
+            x.Ratings = int.Parse(parts[3]);
+            
+
+            MovieList.Add(x);
         }
 
         public List <Movie> ViewMovieByGenre(string genre){
