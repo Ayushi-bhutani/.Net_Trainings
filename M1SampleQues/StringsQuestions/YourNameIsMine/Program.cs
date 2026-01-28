@@ -9,6 +9,9 @@
 
             Console.WriteLine("Enter the woman name");
             string woman = Console.ReadLine();
+            
+            bool manValid = Match.IsValidName(man);
+            bool womanValid = Match.IsValidName(woman);
 
             if (!manValid && !womanValid)
             {

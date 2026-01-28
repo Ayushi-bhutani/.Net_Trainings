@@ -4,9 +4,9 @@ namespace name {
 
         public static bool IsValidName(string name)
         {
-            foreach(char c in name)
+            foreach(char character in name)
             {
-                if(!char.IsLetter(c) && c!=' ')
+                if(!char.IsLetter(character) && character !=' ')
                 {
                     return false;
                 }
@@ -15,54 +15,55 @@ namespace name {
             return true;
         }
 
-        public static bool IsSubsequence(string s1, string s2)
+        public static bool IsSubsequence(string man, string woman)
         {
-            int i =0, j=0;
-            while(i<s1.Length && j<s2.Length)
+            int index1 = 0, index2 = 0;
+            while(index1 < man.Length && index2 < woman.Length)
             {
-                if(char.ToLower(s1[i]) == char.ToLower(s2[j]))
+                if(char.ToLower(man[index1]) == char.ToLower(woman[index2]))
                 {
-                    i++;
+                    index1++;
                 }
-                j++;
+                index2++;
             }
-            return i == s1.Length;
+            return index1 == man.Length;
         }
 
-        public static int CompatibilityValue(string a , string b)
+        public static int CompatibilityValue(string man , string woman)
         {
-            int m = a.Length;
-            int n = b.Length;
-            int[,] dp = new int[m+1, n+1];
-            for(int i=0; i<=m ; i++)
+            int Man = man.Length;
+            int Woman = woman.Length;
+            int[,] dp = new int[Man + 1, Woman + 1];
+
+            for(int index1 = 0; index1 <= Man ; index1++)
             {
-                dp[i,0] = i;
+                dp[index1 , 0] = index1;
             }
 
-            for(int j=0; j<=n; j++)
+            for(int index2 = 0; index2 <= Woman; index2++)
             {
-                dp[0,j] = j;
+                dp[0,index2] = index2;
             }
 
-            for(int i=1; i<=m; i++)
+            for(int i = 1; i <= Man; i++)
             {
-                for(int j=1; j<=n; j++)
+                for(int j = 1; j <= Woman; j++)
                 {
-                    if(char.ToLower(a[i-1]) == char.ToLower(b[j-1]))
+                    if(char.ToLower( man [i-1] ) == char.ToLower( woman [j-1] ))
                     {
-                        dp[i,j] = dp[i-1, j-1];
+                        dp[i,j] = dp [i-1 , j-1];
                     }
                     else
                     {
-                        dp[i,j]= 1+ Math.Min(
-                            dp[i-1, j-1],
-                            Math.Min(dp[i-1, j], dp[i,j-1])
+                        dp [i,j]= 1 + Math.Min(
+                            dp [i-1, j-1],
+                            Math.Min (dp[i-1, j] , dp[i,j-1])
                         );
                     }
                 }
                 
             }
-            return dp[m,n];
+            return dp[Man,Woman];
         }
     }
 }
