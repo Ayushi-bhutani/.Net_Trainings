@@ -5,8 +5,7 @@
         
         public static void Main(String[] args)
         {
-            
-            
+                     
             Console.WriteLine("Enter Deluxe Room Details:");
             Console.Write("Guest Name: ");
             string deluxeGuest = Console.ReadLine();
