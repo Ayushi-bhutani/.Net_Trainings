@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/ExceptionsHandling.Core/">
+    <Project Path="ExceptionsHandling.Core/Exceptions.Core.csproj" />
+  </Folder>
+  <Project Path="ExceptionsHandling.Tests/ExceptionsHandling.Tests.csproj" />
+</Solution>
