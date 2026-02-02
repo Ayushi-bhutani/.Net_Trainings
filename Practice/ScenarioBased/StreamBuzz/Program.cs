@@ -1,8 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace streambuzz
 {
+    // Model class
+    public class CreatorStats
+    {
+        public string CreatorName { get; set; }
+        public double[] WeeklyLikes { get; set; }
+    }
+
     public class Program
     {
         public static List<CreatorStats> EngagementBoard = new List<CreatorStats>();
@@ -50,6 +57,7 @@ namespace streambuzz
             return count == 0 ? 0 : total / count;
         }
 
+        // Entry point
         public static void Main(string[] args)
         {
             Program program = new Program();
@@ -71,7 +79,7 @@ namespace streambuzz
                         Console.WriteLine("Enter creator's name:");
                         string name = Console.ReadLine();
 
-                        Console.WriteLine("Enter weekly likes ");
+                        Console.WriteLine("Enter weekly likes:");
                         double[] likes = new double[4];
 
                         for (int i = 0; i < 4; i++)
@@ -88,7 +96,7 @@ namespace streambuzz
                         break;
 
                     case 2:
-                        Console.WriteLine("Enter likeThreshold");
+                        Console.WriteLine("Enter like threshold:");
                         double likeThreshold = double.Parse(Console.ReadLine());
 
                         var result = program.GetTopPostCounts(EngagementBoard, likeThreshold);
