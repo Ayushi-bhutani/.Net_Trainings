@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+namespace library{
 public class LibraryUtility
 {
     private static int idCounter = 0;
@@ -63,4 +63,5 @@ public class LibraryUtility
     {
         return books.Count;
     }
+}
 }

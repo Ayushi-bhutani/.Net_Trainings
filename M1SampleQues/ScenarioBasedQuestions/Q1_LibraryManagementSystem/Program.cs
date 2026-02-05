@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+namespace library{
 class Program
 {
     static void Main()
@@ -85,4 +85,5 @@ class Program
 
         } while (choice != 5);
     }
+}
 }
