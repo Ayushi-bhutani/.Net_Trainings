@@ -53,7 +53,7 @@ namespace HospitalSystem
                 if (kvp.Value.Count > 0)
                     return kvp.Value.Dequeue();
             }
-
+            
             throw new InvalidOperationException("Queue is empty");
         }
 

@@ -59,7 +59,9 @@ public class EnrollmentSystem<TStudent, TCourse>
     public IReadOnlyList<TStudent> GetEnrolledStudents(TCourse course)
     {
         // Return immutable list
-        if(_enrollments.ContainsKey(course)){
+
+        if(_enrollments.ContainsKey(course))
+        {
             return _enrollments[course].AsReadOnly();
         }
         return new List<TStudent>().AsReadOnly();
@@ -158,17 +160,20 @@ where TCourse : ICourse
         
         double totalWeightedScore = 0;
         int totalCredits = 0;
-        foreach(var item in _grades){
+        foreach(var item in _grades)
+        {
             var enrolledStudent = item.Key.Item1;
             var course = item.Key.Item2;
             var grade = item.Value;
             
-            if(EqualityComparer<TStudent>.Default.Equals(enrolledStudent, student)){
+            if(EqualityComparer<TStudent>.Default.Equals(enrolledStudent, student))
+            {
                 totalWeightedScore += grade*course.Credits;
                 totalCredits += course.Credits;
             }
         }
-        if(totalCredits == 0){
+        if(totalCredits == 0)
+        {
             return null;
         }
         return  totalWeightedScore/totalCredits;
